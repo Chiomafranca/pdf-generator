@@ -43,7 +43,7 @@ const Form = () => {
         UnitPrice1: ${unitprice1}
         UnitPrice2: ${unitprice2}
         SalesAmount: ${Amount}
-        Total Amount :${totalAmount.toFixed(2)}
+        Total Amount: ${totalAmount.toFixed(2)}
        `
    
          doc.text(content, 10, 30)
@@ -65,7 +65,10 @@ const Form = () => {
 
   return (
        <div className=' bg-gray-900 text-white mt-5 rounded-sm mx-auto p-5 max-w-[800px]'>
-     
+           <div className='text-[40px] mb-8 text-green-300'>
+           <h1>Pdf Generator</h1>
+           </div>
+
           <div>
             <p>Name</p>
             <input type="text"
@@ -122,12 +125,14 @@ const Form = () => {
             />
          </div>
 
-           <div className='flex justify-center space-x-2'>
-              <label>Total Amount:</label>
-              <h4>value={`$${totalAmount.toFixed(2)}`}</h4>
-           </div>
+         <div className='flex justify-center space-x-2'>
+         <label>Total Amount:</label>
+          <h4>{`$${totalAmount.toFixed(2)}`}</h4>
+      </div>
 
-          <button onClick={generatePDF} className='bg-green-500 py-1 px-7 rounded-full mt-3'>generatePDF</button>
+
+          <button onClick={generatePDF} className='bg-green-500 py-1 px-7 rounded-full mt-3'>generatePDF
+          </button>
     </div>
   )
 }
